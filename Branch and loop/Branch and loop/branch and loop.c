@@ -1,5 +1,6 @@
 #include<stdio.h>
-//判断一个数是否为奇数
+
+//判断一个数奇偶数
 /*
 int main()
 {
@@ -65,16 +66,132 @@ int main()
 //}
 //}
 
-int main()
-{
-	int ch = 0;
-	//crtl + z
-	//EOF:end of file,-1
-	while (((ch = getchar()) != EOF))
-	{
-		putchar(ch);
-	}
-	/*int ch = getchar();
-	putchar(ch);
-	printf("%c\n", ch);*/
-}
+//int main()
+//{
+//	int ch = 0;
+//	//crtl + z
+//	//EOF:end of file,-1
+//	while (((ch = getchar()) != EOF))
+//	{
+//		putchar(ch);
+//	}
+//	/*int ch = getchar();
+//	putchar(ch);
+//	printf("%c\n", ch);*/
+//}
+//int main()
+//{
+//	int ch = 0;
+//	int ret = 0;
+//	char password[20] = { 0 };
+//	printf("输入密码：");
+//	scanf_s("%s",password,20);
+        //缓冲区还有一个“\n”
+//	while ((ch =getchar()) != '\n')
+//	{
+//		;
+//	}
+//	printf("请确认（y/n）：");
+//	ret = getchar();
+//	if (ret == 'y'||ret=='Y')
+//	{
+//		printf("success\n");
+//	}
+//	else {
+//		printf("failed");
+//	}
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	int ch = 0;
+//	while ((ch = getchar()) != EOF)
+//	{
+//		if (ch <' 0'|| ch>'9')
+//			continue;
+//		putchar(ch);
+//	}
+//}
+
+//int main()
+//{
+//	int i = 0;
+//	for (i = 1; i<=10; i++)
+//	{
+//		if (i == 5)
+//			continue;
+//		printf("%d ", i);
+//	}
+//}
+
+//int main()
+//{
+//	int i = 0;
+//	int j = 0;
+//	for (; i < 10; i++)
+//	{
+//		for (; j < 10; j++)//不要随便省略
+//
+//		{
+//			printf("hehe ");
+//		}
+//	}
+//
+//}
+
+//int main()
+//{
+//	int i = 0;
+//	int k = 0;
+//	for (i = 0, k = 0; k=0; i++, k++)
+//		k++;
+//	
+//}
+
+//int main()
+//{
+//	int i = 1;
+//	do {
+//		if (5 == i)
+//			continue;
+//		printf("%d ", i);
+//		i++;
+//	} while (i <= 10);
+//}
+
+//计算n的阶乘
+
+//int main()
+//{
+//	
+//	int i = 0;
+//	int n = 0;
+//	
+//	int ret = 1;
+//	scanf_s("%d ",&n);
+//	for (i = 1; i <= n; i++)
+//	{
+//		ret = ret * i;
+//	}
+//	printf("ret=%d ", ret);
+//	return 0;
+//}
+
+
+//int main()
+//{
+//
+//	int n = 0;
+//	int ret = 1;
+//	int sum = 0;
+//	int i = 0;
+//	for (n = 1; n <= 3; n++)
+//	{
+//		ret = ret * n;
+//		sum = sum + ret;
+//	}
+//	printf("sum=%d ", sum);
+//}
+
