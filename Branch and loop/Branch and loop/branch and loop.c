@@ -2,6 +2,8 @@
 #include<string.h>
 #include<Windows.h>
 #include<stdlib.h>
+#include<math.h>
+
 //判断一个数奇偶数
 /*
 int main()
@@ -37,7 +39,7 @@ int main()
 //{
 //	int n = 1;
 //	int m = 2;
-//	switch (n)
+//	switch (n)//switch里是整形常量表达式
 //	{
 //	case 1: m++;
 //	case 2:n++;
@@ -302,3 +304,106 @@ int main()
 //		printf("三次密码均错误，请退出");
 //	return 0;
 //}
+
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	int c = 0;
+//
+//	scanf_s("%d %d %d", &a, &b, &c);
+//	if (a < b)
+//	{
+//		int tmp = a;
+//		a = b;
+//		b = tmp;
+//	}
+//	if (a < c)
+//	{
+//		int tmp = a;
+//		a = c;
+//		c = tmp;
+//	}
+//	if (b < c)
+//	{
+//		int tmp = b;
+//		b = c;
+//		c = tmp;
+//	}
+//	printf("%d %d %d ", a, b, c);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int i = 0;
+//	for (i = 1; i <= 100; i++)
+//	{
+//		if (i % 3 == 0)
+//			printf("%d ", i);
+//	}
+//}
+
+//int main()
+//{
+//	int m = 0;
+//	int n = 0;
+//	int r = 0;
+//	scanf_s("%d%d", &m, &n);
+//	while (r=m % n)
+//	{
+//		//r = m % n;
+//		m = n;
+//		n = r;
+//	}
+//	printf("%d ", n);
+//
+//}
+
+//判断闰年
+//int main()
+//{
+//	int count = 0;
+//	int year = 0;
+//	for (year = 1000; year <= 2200; year++)
+//	{
+//		
+//		if (year % 4 == 0 && year % 100 != 0)
+//		{
+//			printf("%d ", year);
+//			count++;
+//		}
+//		else if (year % 400 == 0)
+//		{
+//			printf("%d ", year);
+//			count++;
+//		}
+//	}
+//	printf("\ncount=%d", count);
+//}
+
+//100到200的素数
+int main()
+{
+	int j = 0;
+	int i = 0;
+	int count = 0;
+	for (i = 100; i <= 200; i++)
+	{
+
+		for (j = 2; j <=sqrt( i); j++)
+		{
+			if (i % j == 0)
+				break;
+		}
+
+		if (j >sqrt(i))
+		{
+			count++;
+			printf("%d ", i);
+
+		}
+	}
+	printf("\ncount=%d ", count);
+	return 0;
+}
