@@ -135,26 +135,192 @@
 //	*p=20;			// 解引用操作符 
 //}
 
-int main()
+//int main()
+//{
+//	int a = 10;
+//	char c = 'r';
+//	char* p = &c;
+//	int arr[10] = { 0 };
+//
+//	//sizeof计算变量所占内存空间的大小，单位是字节
+//	printf("%d\n", sizeof(a)); //4
+//	printf("%d\n", sizeof(int)); //4
+//
+//	printf("%d\n", sizeof(c));//1
+//	printf("%d\n", sizeof(char));//1
+//
+//	printf("%d\n", sizeof(p));//4
+//	printf("%d\n", sizeof(char*));//4
+//
+//	printf("%d\n", sizeof(arr));//40
+//	printf("%d\n", sizeof(int [10]));//数组类型，去掉名字，剩下的就是数组的类型
+//}
+
+//int main()
+//{
+//	short s = 0;
+//	int a = 10;
+//	printf("%d\n", sizeof(s = a + 5));
+//	printf("%d\n", s);
+//}
+
+//int main()
+//{
+//
+//	//int a = 0;
+//	//printf("%d\n", ~a);//~按位取反
+//
+//	int a = 11;
+//	a = a | (1 << 2);
+//	printf("%d\n", a);//15
+//	a = a & (~(1 << 2));
+//	printf("%d", a);//11
+//}
+
+//int main()
+//{
+//	int a = 10;
+//
+//	//printf("%d\n", ++a);//前置++，先++，后使用
+//
+//	printf("%d\n", a++);//后置++，先使用，后++
+//}
+
+
+//int main()
+//{
+//	int a = (int)3.14;//强制类型转换
+//	printf("%d ", a);
+//}
+
+
+//void test1(int arr[])
+//{
+//	printf("%d\n", sizeof(arr));//指针接受 ，指针 4字节或者8字节，32平台默认4字节
+//}
+//void test2(char ch[]) //本质是个指针
+//{
+//	printf("%d\n", sizeof(ch));
+//}
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	char ch[10] = { 0 };
+//	printf("%d\n", sizeof(arr));
+//	printf("%d\n", sizeof(ch));
+//	test1(arr);
+//	test2(ch);  // 数组传参，传的是首元素的地址，用指针接收
+//}
+
+
+//int main()
+//{
+//	int i = 0, a = 0, b = 2, c = 3, d = 4;
+//	i = a++ && ++b && d++;//逻辑与，如果左边出现了0，右边就不会继续算了。
+//							//同理，逻辑或也如此，前面出现了真，后面就不会算
+//
+//	printf(" a=%d\n b=%d\n c=%d\n d=%d\n", a, b, c, d);
+//
+//}
+
+
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	if (a > 5)
+//		b = 3;
+//	else
+//		b = -3;
+//	printf("%d\n", b);
+//	b = (a > 5 ? 3 : -3);
+//	printf("%d\n", b);
+//}
+
+//创建了一个结构体类型-struct Stu
+struct Stu
 {
-	int a = 10;
-	char c = 'r';
-	char* p = &c;
-	int arr[10] = { 0 };
+	char name[20];
+	int age;
+	char id[20];
+};
 
-	//sizeof计算变量所占内存空间的大小，单位是字节
-	printf("%d\n", sizeof(a)); //4
-	printf("%d\n", sizeof(int)); //4
+//int main()
+//{
+//	int a = 10;
+//	//使用struct Stu这个类型创建了一个学生对象s1并初始化
+//	struct Stu s1 = { "罗澎",20,"20180601012" };
+//	struct Stu* ps = &s1;
+//
+//	printf("%s\n", ps->name);   //结构体指针->成员名
+//	printf("%d\n", ps->age);
+//	printf("%s\n", ps->id);
+//
+//	//printf("%s\n", (*ps).name);
+//	//printf("%d\n", (*ps).age);
+//	//printf("%s\n", (*ps).id);
+//
+//	//printf("%s\n", s1.name);
+//	//printf("%d\n", s1.age);
+//	//printf("%s\n", s1.id);
+//	//结构体变量.成员名
+//}
 
-	printf("%d\n", sizeof(c));//1
-	printf("%d\n", sizeof(char));//1
 
-	printf("%d\n", sizeof(p));//4
-	printf("%d\n", sizeof(char*));//4
+//隐式类型转换
+//c的整型算术运算总是至少以缺省整型类型的精度来进行的.为了获得这个精度, 表达式中的字符和短整型操作数在使用之前被转换为普通整型, 这种转换称为整型提升.
+//整型提升是按照变量的数据类型的符号位来进行提升的.
+//int main()
+//{
+//	//char类型，所以a，b只能放一个字节
+//	//整形提升时，高位补充符号位
+//
+//	char a = 3;    //00000000000000000000000000000011
+//				   //00000011  - a
+//
+//	char b = 127;  	//0000000000000000000000001111111
+//					//01111111  - b
+//	                //a和b如何相加
+//					// 按照符号位整形提升
+//					//00000011 
+//					//0000000000000000000000000000011
+//					//01111111
+//					//0000000000000000000000001111111
+//					
+//					//0000000000000000000000010000010:c
+//					// 
+//					//加法运算完成后，结果将被截断，再存储于c中
+//	
+//	char c = a + b; //10000010  -c
+//					//1111111111111111111111110000010 -补码
+//					//1111111111111111111111110000001 -反码
+//					//1000000000000000000000001111110 -原码 -126
+//	printf("%d\n", c); 
+//}
 
-	printf("%d\n", sizeof(arr));//40
-	printf("%d\n", sizeof(int [10]));//数组类型，去掉名字，剩下的就是数组的类型
+
+//整形提升实例
+//int main()
+//{
+//	char a = 0xb6;
+//	short b = 0xb600;
+//	int c = 0xb6000000;
+//	if (a == 0xb6)
+//		printf("a");
+//	if (b == 0xb600)
+//		printf("b");
+//	if (c == 0xb6000000)
+//		printf("c");
+//}
 
 
+//int main()
+//{
+//	char c = 1;
+//	//%u，以十进制打印无符号整形
+//	printf("%u\n", sizeof(c));
+//	printf("%u\n", sizeof(+c));
+//	printf("%u\n", sizeof(!c));
+//}
 
-}
+
