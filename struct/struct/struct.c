@@ -146,20 +146,113 @@
 //	printf("%d ", ret);
 //}
 
-double pow(int n, int k)
+//double pow(int n, int k)
+//{
+//	if (k < 0)
+//		return (1 / (pow(n, -k)));
+//	if (k == 0)
+//		return 1;
+//	else
+//		return n * pow(n, k - 1);
+//}
+//int main()
+//{
+//	int n = 0;
+//	int k = 0;
+//	scanf_s("%d%d", &n, &k);
+//	double ret = pow(n,k);
+//	printf("ret=%lf\n", ret);
+//}
+
+//stuct结构体关键字   stu结构体标签  struct stu结构体类型
+//struct stu
+//{
+//	//成员变量
+//	char name[20];
+//	short age;
+//	char tel[12];
+//	char sex[5];
+//}s1,s2,s3;  //三个全局的结构体变量
+
+//typedef struct stu
+//{
+//	//成员变量
+//	char name[20];
+//	short age;
+//	char tel[12];
+//	char sex[5];
+//}Stu;
+//
+//int main()
+//{
+//	struct stu s1 = { "罗澎",20,"1656483310","man" };//局部变量
+//	Stu s2;
+//}
+
+//struct S
+//{
+//	int a;
+//	char c;
+//	char arr[20];
+//	double d;
+//};
+//struct T
+//{
+//	char ch[10];
+//	struct S s;
+//	char* pc;
+//};
+//int main()
+//{
+//	char arr[] = "hello world";
+//	struct T t = { "hehe",{100,'w',"hello bit",3.14},arr};
+//	printf("%s\n", t.ch);
+//	printf("%s\n", t.s.arr);
+//	printf("%lf\n", t.s.d);
+//	printf("%s\n", t.pc);
+//}
+//
+//typedef struct stu
+//{
+//	//成员变量
+//	char name[20];
+//	short age;
+//	char tel[12];
+//	char sex[5];
+//}Stu;
+//void print1(Stu tmp)
+//{
+//	printf("name:%s\n", tmp.name);
+//	printf("age:%d\n", tmp.age);
+//	printf("tel:%s\n", tmp.tel);
+//	printf("sex:%s\n", tmp.sex);
+//}
+//void print2(Stu* ps)
+//{
+//	printf("name: %s\n", ps->name);
+//	printf("age: %d\n", ps->age);
+//	printf("tel: %s\n", ps->tel);
+//	printf("sex: %s\n", ps->sex);
+// }
+//int main()
+//{
+//	Stu s = { "李四",40,"15512345678","man" };
+//	print1(s);
+//	print2(&s);   //首选第二种，函数传参时，参数需要压栈的，如果结构体过大，参数压栈的系统开销大，导致性能下降。所以，结构体传参传地址
+//}
+
+
+int add(int a, int b)
 {
-	if (k < 0)
-		return (1 / (pow(n, -k)));
-	if (k == 0)
-		return 1;
-	else
-		return n * pow(n, k - 1);
+	int c = 0;
+	c = a + b;
+	return c;
 }
 int main()
 {
-	int n = 0;
-	int k = 0;
-	scanf_s("%d%d", &n, &k);
-	double ret = pow(n,k);
-	printf("ret=%lf\n", ret);
+	int a = 10;
+	int b = 20;
+	int ret = 0;
+	ret = add(a, b);
+
 }
